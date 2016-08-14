@@ -13,7 +13,7 @@
 @end
 
 @interface XYMenuAnimateView : UIView
-@property (nonatomic, assign) int totalloc;//默认每行3个
+@property (nonatomic, assign) int columnCount;//默认每行3个
 @property (nonatomic, strong) NSArray *textArray;
 @property (nonatomic, strong) NSArray<NSString *> *imageNameArray;
 @property (nonatomic,strong)  id<XYMenuAnimateViewDelegate>delegate;

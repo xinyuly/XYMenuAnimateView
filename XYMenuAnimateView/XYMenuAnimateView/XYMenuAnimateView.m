@@ -27,13 +27,13 @@
 
 @implementation XYMenuAnimateView
 - (void)show {
-    int totalloc= self.totalloc?self.totalloc:3;
+    int columnCount= self.columnCount?self.columnCount:3;
     CGFloat width = 110;
     CGFloat edge = (self.frame.size.width - width*3)/4;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     for (int i = 0; i<self.imageNameArray.count; i++) {
-        int row=i/totalloc;
-        int loc=i%totalloc;
+        int row=i/columnCount;
+        int loc=i%columnCount;
         XYButton *button = [[XYButton alloc] init];
         button.frame = CGRectMake(edge+(edge+width)*loc, 515+edge+(edge+width)*row, width, width);
         [self addSubview:button];
@@ -46,13 +46,16 @@
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         button.tag = i;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        //动画方式一：UIView
         [UIView animateWithDuration:0.5 delay:i*0.03 usingSpringWithDamping:0.6 initialSpringVelocity:0.05 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             
             button.frame  = CGRectMake(edge+(edge+width)*loc, 15+edge+(edge+width)*row, width, width);;
             
         } completion:^(BOOL finished) {
-            
         }];
+        //动画方式二：
+//        CABasicAnimation *positionAnimation;
+//        positionAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
     }
    });
 }
