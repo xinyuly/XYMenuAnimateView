@@ -35,6 +35,7 @@
     }
     self.buttonView.textArray = textArr;
     self.buttonView.imageNameArray = imgArr;
+    self.buttonView.delegate = self;
     [self.buttonView show];
 }
 
