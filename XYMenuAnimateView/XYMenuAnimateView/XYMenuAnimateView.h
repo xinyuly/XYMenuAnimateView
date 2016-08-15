@@ -16,7 +16,7 @@
 @property (nonatomic, assign) int columnCount;//默认每行3个
 @property (nonatomic, strong) NSArray *textArray;
 @property (nonatomic, strong) NSArray<NSString *> *imageNameArray;
-@property (nonatomic,strong)  id<XYMenuAnimateViewDelegate>delegate;
+@property (nonatomic, weak)   id<XYMenuAnimateViewDelegate>delegate;
 - (void)show;
 - (void)close:(void(^)())completion;
 

@@ -41,7 +41,7 @@
 
 - (IBAction)exitControllerAction:(id)sender {
     [self.buttonView close:^{
-        [self dismissViewControllerAnimated:YES completion:nil];
+       [self dismissViewControllerAnimated:NO completion:nil];
     }];
 }
 

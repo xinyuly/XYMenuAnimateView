@@ -13,7 +13,7 @@
 @implementation XYButton
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat magre = 5;
+    CGFloat magre = 8;
     CGFloat imgW = self.imageView.frame.size.width;
     CGFloat imgH = self.imageView.frame.size.height;
     CGFloat imgX = (self.frame.size.width-imgW)*0.5;
@@ -28,7 +28,7 @@
 @implementation XYMenuAnimateView
 - (void)show {
     int columnCount= self.columnCount?self.columnCount:3;
-    CGFloat width = 110;
+    CGFloat width = 100;
     CGFloat edge = (self.frame.size.width - width*3)/4;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     for (int i = 0; i<self.imageNameArray.count; i++) {
@@ -47,7 +47,7 @@
         button.tag = i;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         //动画方式一：UIView
-        [UIView animateWithDuration:0.5 delay:i*0.03 usingSpringWithDamping:0.6 initialSpringVelocity:0.05 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+        [UIView animateWithDuration:0.5 delay:i*0.03 usingSpringWithDamping:0.7 initialSpringVelocity:0.05 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             
             button.frame  = CGRectMake(edge+(edge+width)*loc, 15+edge+(edge+width)*row, width, width);;
             
@@ -68,19 +68,19 @@
 }
 
 - (void)close:(void(^)())completion {
-    [UIView animateWithDuration:0.6 animations:^{
         for (int i = 0; i<self.imageNameArray.count; i++) {
             XYButton *button = self.subviews[i];
             CGFloat width = CGRectGetWidth(button.frame);
             CGFloat buttonX = button.frame.origin.x;
             CGFloat buttonY = button.frame.origin.y;
-            [UIView animateWithDuration:0.5 delay:0.2-i*0.03 usingSpringWithDamping:0.6 initialSpringVelocity:0.05 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            [UIView animateWithDuration:0.6 delay:0.3-i*0.03 usingSpringWithDamping:0.6 initialSpringVelocity:0.05 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                 button.frame  = CGRectMake(buttonX, buttonY+500, width, width);
             } completion:^(BOOL finished) {
                 completion();
+                [button removeFromSuperview];
             }];
             
         }
-    }];
+
 }
 @end
