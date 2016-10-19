@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.buttonView.backgroundColor = [UIColor clearColor];
+//    self.buttonView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:0.9];
     [self addBlurEffect];
     

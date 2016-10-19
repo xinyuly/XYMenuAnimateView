@@ -27,10 +27,10 @@
 
 @implementation XYMenuAnimateView
 - (void)show {
-    int columnCount= self.columnCount?self.columnCount:3;
-    CGFloat width = 100;
-    CGFloat edge = (self.frame.size.width - width*3)/4;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        int columnCount= self.columnCount?self.columnCount:3;
+        CGFloat width = 100;
+        CGFloat edge = (CGRectGetWidth(self.bounds) - width*3)/4;
     for (int i = 0; i<self.imageNameArray.count; i++) {
         int row=i/columnCount;
         int loc=i%columnCount;
