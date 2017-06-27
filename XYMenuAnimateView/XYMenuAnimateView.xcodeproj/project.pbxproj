@@ -123,6 +123,7 @@
 				TargetAttributes = {
 					B73CE3EE1D605A6A00A7F6CB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3YHNM34K37;
 					};
 				};
 			};
@@ -277,7 +278,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3YHNM34K37;
 				INFOPLIST_FILE = XYMenuAnimateView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XY.XYMenuAnimateView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -288,7 +291,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3YHNM34K37;
 				INFOPLIST_FILE = XYMenuAnimateView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XY.XYMenuAnimateView;
 				PRODUCT_NAME = "$(TARGET_NAME)";

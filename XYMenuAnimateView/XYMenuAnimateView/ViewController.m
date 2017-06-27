@@ -23,7 +23,6 @@
 
 - (IBAction)publishAction:(id)sender {
     PublishController *controller = [[PublishController alloc] init];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
     [self presentViewController:controller animated:NO completion:nil];
 }
 

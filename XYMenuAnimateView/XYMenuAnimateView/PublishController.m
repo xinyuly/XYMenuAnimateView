@@ -18,15 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    self.buttonView.backgroundColor = [UIColor clearColor];
+    self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     self.view.backgroundColor = [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:0.9];
     [self addBlurEffect];
-    
     [self initSubViews];
 }
 
 - (void)initSubViews{
+    self.buttonView.frame = CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 200);
     NSArray *textArr = @[NSLocalizedString(@"文字",nil),NSLocalizedString(@"图片",nil),NSLocalizedString(@"视频",nil),NSLocalizedString(@"语音",nil),NSLocalizedString(@"投票",nil),NSLocalizedString(@"签到",nil),];
     NSMutableArray *imgArr = [NSMutableArray array];
     for (int i = 0; i<textArr.count; i++) {
